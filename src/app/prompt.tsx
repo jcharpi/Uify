@@ -38,10 +38,10 @@ export default function Prompt() {
           padding: "var(--size-responsive-20)",
           backgroundColor: "var(--palette-default-surface-1)",
           height: "40vh",
-          width: "75vh",
+          width: "750px",
           maxWidth: "90vw",
           minHeight: "fit-content",
-          margin: "15vh auto 0 auto",
+          margin: "15vh auto 15vh auto",
           borderRadius: "var(--size-rounded-medium)",
           boxShadow: "var(--elevation-large)",
         }}
