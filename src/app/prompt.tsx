@@ -1,64 +1,6 @@
-"use client"
-
-import { VisaChevronDownTiny } from "@visa/nova-icons-react"
-import {
-  Button,
-  Combobox,
-  DropdownContainer,
-  Input,
-  InputContainer,
-  Label,
-  Listbox,
-  ListboxContainer,
-  ListboxItem,
-  UtilityFragment,
-} from "@visa/nova-react"
-import {
-  UseComboboxState,
-  UseComboboxStateChangeOptions,
-  useCombobox,
-} from "downshift"
-
-type Item = { value: string }
-
-const items: Item[] = [
-  { value: "Option A" },
-  { value: "Option B" },
-  { value: "Option C" },
-  { value: "Option D" },
-  { value: "Option E" },
-]
-
-export const itemToString = (item: Item | null) => (item ? item.value : "")
-
-export const stateReducer = <ItemType,>(
-  state: UseComboboxState<ItemType>,
-  { type, changes }: UseComboboxStateChangeOptions<ItemType>
-) =>
-  type === useCombobox.stateChangeTypes.ItemMouseMove ||
-  type === useCombobox.stateChangeTypes.MenuMouseLeave
-    ? {
-        ...changes,
-        highlightedIndex: state.highlightedIndex,
-      }
-    : changes
+import ModelCombobox from "./components/ModelCombobox"
 
 export default function Prompt() {
-  const {
-    getInputProps,
-    getItemProps,
-    getLabelProps,
-    getMenuProps,
-    getToggleButtonProps,
-    highlightedIndex,
-    inputValue,
-    isOpen,
-  } = useCombobox({
-    items: items,
-    itemToString,
-    stateReducer,
-  })
-  const { id: listboxId, ...listboxProps } = getMenuProps()
   return (
     <div
       style={{
@@ -112,70 +54,7 @@ export default function Prompt() {
         </h3>
 
         <div style={{ marginTop: "var(--size-responsive-30)" }}>
-          <Combobox>
-            <UtilityFragment vFlex vFlexCol vGap={4}>
-              <DropdownContainer>
-                <Label {...getLabelProps()}>Select Model</Label>
-                <UtilityFragment vFlexRow>
-                  <InputContainer>
-                    <Input
-                      aria-haspopup="listbox"
-                      name="model-selector"
-                      type="text"
-                      style={{
-                        paddingLeft: "var(--size-responsive-12)",
-                        paddingRight: "var(--size-responsive-12)",
-                      }}
-                      {...getInputProps({
-                        "aria-expanded": isOpen,
-                        "aria-owns": listboxId,
-                      })}
-                    />
-                    <Button
-                      aria-label="expand"
-                      buttonSize="small"
-                      colorScheme="tertiary"
-                      iconButton
-                      style={{
-                        marginLeft: "var(--size-responsive-8)",
-                        marginRight: "var(--size-responsive-8)",
-                      }}
-                      {...getToggleButtonProps()}
-                    >
-                      <VisaChevronDownTiny />
-                    </Button>
-                  </InputContainer>
-                </UtilityFragment>
-              </DropdownContainer>
-            </UtilityFragment>
-            {isOpen && (
-              <ListboxContainer>
-                <Listbox id={listboxId} {...listboxProps}>
-                  {items.map((item, index) => (
-                    <ListboxItem
-                      className={
-                        highlightedIndex === index
-                          ? "v-listbox-item-highlighted"
-                          : ""
-                      }
-                      key={`model-option-${index}`}
-                      style={{
-                        paddingLeft: "var(--size-responsive-12)",
-                        paddingRight: "var(--size-responsive-12)",
-                      }}
-                      {...getItemProps({
-                        "aria-selected": inputValue === item.value,
-                        index,
-                        item,
-                      })}
-                    >
-                      {item.value}
-                    </ListboxItem>
-                  ))}
-                </Listbox>
-              </ListboxContainer>
-            )}
-          </Combobox>
+          <ModelCombobox />
         </div>
       </div>
     </div>
