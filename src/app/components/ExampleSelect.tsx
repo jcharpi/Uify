@@ -1,6 +1,4 @@
-import { Button, Label, Utility } from "@visa/nova-react"
-
-const id = "exampleSelect"
+import { Button, Utility } from "@visa/nova-react"
 
 function ExampleButton({ displayText }: { displayText: string }) {
   return (
@@ -22,7 +20,12 @@ export default function ExampleSelect() {
   return (
     <div style={{ margin: "var(--size-responsive-20) 0" }}>
       <Utility vFlex vFlexCol vGap={4}>
-        <Label htmlFor={id}>TRY ONE OF THESE EXAMPLES</Label>
+        <div
+          className="v-typography-body-2-medium"
+          style={{ color: "var(--palette-default-text-subtle)" }}
+        >
+          TRY ONE OF THESE EXAMPLES
+        </div>
         <Utility vFlex vFlexRow vFlexWrap vGap={8}>
           <ExampleButton displayText="Responsive login" />
           <ExampleButton displayText="User profile card" />

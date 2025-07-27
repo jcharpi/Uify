@@ -1,6 +1,7 @@
 import ModelCombobox from "./components/ModelCombobox"
 import DescriptionInput from "./components/DescriptionInput"
 import ExampleSelect from "./components/ExampleSelect"
+import { Button } from "@visa/nova-react"
 
 export default function Prompt() {
   return (
@@ -27,12 +28,13 @@ export default function Prompt() {
         style={{
           padding: "var(--size-responsive-20)",
           backgroundColor: "var(--palette-default-surface-1)",
-          height: "60vh",
+          height: "40vh",
           width: "75vh",
           maxWidth: "90vw",
           minHeight: "fit-content",
           margin: "10vh auto 0 auto",
           borderRadius: "var(--size-rounded-medium)",
+          boxShadow: "var(--elevation-large)",
         }}
       >
         <h2
@@ -60,6 +62,18 @@ export default function Prompt() {
           <ExampleSelect />
           <ModelCombobox />
         </div>
+        <Button
+          alternate
+          style={{
+            position: "static",
+            margin: "var(--size-responsive-40) auto",
+            display: "block",
+            padding: "var(--size-responsive-12) var(--size-responsive-24)",
+            fontSize: "var(--typography-button-large-font-size)",
+          }}
+        >
+          Generate
+        </Button>
       </div>
     </div>
   )

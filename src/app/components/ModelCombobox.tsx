@@ -55,7 +55,7 @@ export default function ModelCombobox() {
   const { id: listboxId, ref, ...listboxProps } = getMenuProps()
 
   return (
-    <Combobox>
+    <Combobox style={{ position: "relative" }}>
       <UtilityFragment vFlex vFlexCol vGap={4}>
         <DropdownContainer>
           <Label {...getLabelProps()}>Select Model</Label>
@@ -100,6 +100,13 @@ export default function ModelCombobox() {
         {...listboxProps}
         style={{
           display: isOpen ? "block" : "none",
+          position: "absolute",
+          top: "100%",
+          left: 0,
+          right: 0,
+          zIndex: 2,
+          backgroundColor: "white",
+          boxShadow: "var(--elevation-xsmall)",
         }}
       >
         <ListboxContainer>
