@@ -1,3 +1,4 @@
+import Generation from "./generation"
 import Prompt from "./prompt"
 
 export default function Home() {
@@ -8,7 +9,7 @@ export default function Home() {
         backgroundColor: "var(--palette-default-active)",
       }}
     >
-      <Prompt />
+      <Generation />
     </div>
   )
 }
