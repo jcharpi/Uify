@@ -2,6 +2,7 @@
 
 import CodeWindow from "./components/CodeWindow"
 import ComponentUsedListbox from "./components/ComponentUsedListbox"
+import PreviewWindow from "./components/PreviewWindow"
 
 export default function Generation() {
   return (
@@ -65,7 +66,9 @@ export default function Generation() {
             borderRadius: "var(--size-rounded-medium)",
             boxShadow: "var(--elevation-large)",
           }}
-        ></div>
+        >
+          <PreviewWindow />
+        </div>
       </div>
     </div>
   )

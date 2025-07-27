@@ -98,7 +98,7 @@ export default function CodeWindow() {
 
       <div
         style={{
-          backgroundColor: "#4a4a4a",
+          backgroundColor: "var(--palette-default-text-subtle)",
           borderRadius: "var(--size-rounded-medium)",
           padding: "var(--size-responsive-20)",
           height: "80vh",
