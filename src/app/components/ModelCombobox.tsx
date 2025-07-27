@@ -21,10 +21,7 @@ import {
 
 type Item = { value: string }
 
-const items: Item[] = [
-  { value: "Claude Opus 4" },
-  { value: "Deepseek R1" },
-]
+const items: Item[] = [{ value: "Claude Opus 4" }, { value: "Deepseek R1" }]
 
 export const itemToString = (item: Item | null) => (item ? item.value : "")
 
@@ -55,7 +52,7 @@ export default function ModelCombobox() {
     itemToString,
     stateReducer,
   })
-  const { id: listboxId, ...listboxProps } = getMenuProps()
+  const { id: listboxId, ref, ...listboxProps } = getMenuProps()
 
   return (
     <Combobox>
@@ -68,6 +65,7 @@ export default function ModelCombobox() {
                 aria-haspopup="listbox"
                 name="model-selector"
                 type="text"
+                readOnly
                 style={{
                   paddingLeft: "var(--size-responsive-12)",
                   paddingRight: "var(--size-responsive-12)",
@@ -95,20 +93,28 @@ export default function ModelCombobox() {
           </UtilityFragment>
         </DropdownContainer>
       </UtilityFragment>
-      {isOpen && (
+      {/* Keep menu element always in DOM but hide with CSS display property
+          instead of conditional rendering to avoid Downshift errors */}
+      <div
+        ref={ref}
+        {...listboxProps}
+        style={{
+          display: isOpen ? "block" : "none",
+        }}
+      >
         <ListboxContainer>
-          <Listbox id={listboxId} {...listboxProps}>
+          <Listbox id={listboxId}>
             {items.map((item, index) => (
               <ListboxItem
                 className={
-                  highlightedIndex === index
-                    ? "v-listbox-item-highlighted"
-                    : ""
+                  highlightedIndex === index ? "v-listbox-item-highlighted" : ""
                 }
                 key={`model-option-${index}`}
                 style={{
                   paddingLeft: "var(--size-responsive-12)",
                   paddingRight: "var(--size-responsive-12)",
+                  outline: "none",
+                  boxSizing: "border-box",
                 }}
                 {...getItemProps({
                   "aria-selected": inputValue === item.value,
@@ -121,7 +127,7 @@ export default function ModelCombobox() {
             ))}
           </Listbox>
         </ListboxContainer>
-      )}
+      </div>
     </Combobox>
   )
 }
