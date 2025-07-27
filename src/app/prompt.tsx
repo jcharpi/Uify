@@ -1,4 +1,6 @@
 import ModelCombobox from "./components/ModelCombobox"
+import DescriptionInput from "./components/DescriptionInput"
+import ExampleSelect from "./components/ExampleSelect"
 
 export default function Prompt() {
   return (
@@ -54,6 +56,8 @@ export default function Prompt() {
         </h3>
 
         <div style={{ marginTop: "var(--size-responsive-30)" }}>
+          <DescriptionInput />
+          <ExampleSelect />
           <ModelCombobox />
         </div>
       </div>
