@@ -7,7 +7,12 @@ const options = ["Input", "Combobox", "Textarea"]
 export default function ComponentUsedListbox() {
   return (
     <fieldset style={{ boxShadow: "var(--elevation-large)" }}>
-      <Label id={`${id}-label`} tag="legend">
+      <Label
+        id={`${id}-label`}
+        tag="legend"
+        className="v-typography-headline-3 v-typography-color-subtle"
+        style={{ marginBottom: "var(--size-responsive-16)" }}
+      >
         Components Used
       </Label>
       <ListboxContainer>

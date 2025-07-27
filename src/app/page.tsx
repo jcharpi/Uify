@@ -9,6 +9,7 @@ export default function Home() {
         backgroundColor: "var(--palette-default-active)",
       }}
     >
+      <Prompt/>
       <Generation />
     </div>
   )

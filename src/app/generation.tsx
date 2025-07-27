@@ -1,5 +1,6 @@
 "use client"
 
+import CodeWindow from "./components/CodeWindow"
 import ComponentUsedListbox from "./components/ComponentUsedListbox"
 
 export default function Generation() {
@@ -52,7 +53,9 @@ export default function Generation() {
             borderRadius: "var(--size-rounded-medium)",
             boxShadow: "var(--elevation-large)",
           }}
-        ></div>
+        >
+          <CodeWindow />
+        </div>
 
         {/* Third Box - 2/5 columns */}
         <div
