@@ -1,9 +1,15 @@
 import { Button, Utility } from "@visa/nova-react"
 
-function ExampleButton({ displayText }: { displayText: string }) {
+interface ExampleButtonProps {
+  displayText: string
+  onClick: (text: string) => void
+}
+
+function ExampleButton({ displayText, onClick }: ExampleButtonProps) {
   return (
     <Button
       colorScheme="secondary"
+      onClick={() => onClick(displayText)}
       style={{
         flex: "0 1 auto",
         minWidth: "fit-content",
@@ -16,7 +22,11 @@ function ExampleButton({ displayText }: { displayText: string }) {
   )
 }
 
-export default function ExampleSelect() {
+interface ExampleSelectProps {
+  onExampleClick: (text: string) => void
+}
+
+export default function ExampleSelect({ onExampleClick }: ExampleSelectProps) {
   return (
     <div style={{ margin: "var(--size-responsive-20) 0" }}>
       <Utility vFlex vFlexCol vGap={4}>
@@ -27,9 +37,18 @@ export default function ExampleSelect() {
           TRY ONE OF THESE EXAMPLES
         </div>
         <Utility vFlex vFlexRow vFlexWrap vGap={8}>
-          <ExampleButton displayText="Responsive login" />
-          <ExampleButton displayText="User profile card" />
-          <ExampleButton displayText="Payment method form" />
+          <ExampleButton
+            displayText="Responsive login"
+            onClick={onExampleClick}
+          />
+          <ExampleButton
+            displayText="User profile card"
+            onClick={onExampleClick}
+          />
+          <ExampleButton
+            displayText="Payment method form"
+            onClick={onExampleClick}
+          />
         </Utility>
       </Utility>
     </div>

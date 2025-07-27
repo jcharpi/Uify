@@ -1,9 +1,18 @@
+"use client"
+
+import { useState } from "react"
 import ModelCombobox from "./components/ModelCombobox"
 import DescriptionInput from "./components/DescriptionInput"
 import ExampleSelect from "./components/ExampleSelect"
 import { Button } from "@visa/nova-react"
 
 export default function Prompt() {
+  const [description, setDescription] = useState("")
+
+  const handleExampleClick = (exampleText: string) => {
+    setDescription(exampleText)
+  }
+
   return (
     <div
       style={{
@@ -32,7 +41,7 @@ export default function Prompt() {
           width: "75vh",
           maxWidth: "90vw",
           minHeight: "fit-content",
-          margin: "10vh auto 0 auto",
+          margin: "15vh auto 0 auto",
           borderRadius: "var(--size-rounded-medium)",
           boxShadow: "var(--elevation-large)",
         }}
@@ -58,8 +67,8 @@ export default function Prompt() {
         </h3>
 
         <div style={{ marginTop: "var(--size-responsive-30)" }}>
-          <DescriptionInput />
-          <ExampleSelect />
+          <DescriptionInput value={description} onChange={setDescription} />
+          <ExampleSelect onExampleClick={handleExampleClick} />
           <ModelCombobox />
         </div>
         <Button

@@ -1,8 +1,14 @@
+import { ChangeEvent } from "react"
 import { InputContainer, Label, Textarea, Utility } from "@visa/nova-react"
 
 const id = "descriptionInput"
 
-export default function DescriptionInput() {
+interface DescriptionInputProps {
+  value: string
+  onChange: (value: string) => void
+}
+
+export default function DescriptionInput({ value, onChange }: DescriptionInputProps) {
   return (
     <div style={{ margin: "var(--size-responsive-20) 0" }}>
       <Utility vFlex vFlexCol vGap={4}>
@@ -13,6 +19,8 @@ export default function DescriptionInput() {
             fixed
             id={id}
             name={id}
+            value={value}
+            onChange={(e: ChangeEvent<HTMLTextAreaElement>) => onChange(e.target.value)}
             style={{
               blockSize: "80px",
               margin: "var(--size-responsive-4)",
