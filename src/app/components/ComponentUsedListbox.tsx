@@ -39,6 +39,7 @@ export default function ComponentUsedListbox({
           justifyContent: "space-between",
           alignItems: "center",
           marginBottom: "var(--size-responsive-16)",
+          height: "var(--size-responsive-48)",
         }}
       >
         <Label

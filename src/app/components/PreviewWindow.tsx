@@ -9,6 +9,7 @@ export default function PreviewWindow() {
           justifyContent: "space-between",
           alignItems: "center",
           marginBottom: "var(--size-responsive-16)",
+          height: "var(--size-responsive-48)",
         }}
       >
         <div
@@ -21,24 +22,6 @@ export default function PreviewWindow() {
           <Label tag="legend" className="v-typography-headline-3">
             Component Preview
           </Label>
-        </div>
-      </div>
-
-      <div
-        style={{
-          backgroundColor: "var(--palette-default-surface-1)",
-          borderRadius: "var(--size-rounded-medium)",
-          height: "80vh",
-          overflow: "auto",
-          display: "flex",
-        }}
-      >
-        <div
-          style={{
-            color: "var(--palette-default-text-subtle)",
-          }}
-        >
-          Component preview will appear here
         </div>
       </div>
     </fieldset>

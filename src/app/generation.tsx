@@ -39,7 +39,6 @@ export default function Generation({
           marginTop: "var(--size-responsive-20)",
         }}
       >
-        {/* First Box - 1/5 column */}
         <div
           style={{
             padding: "var(--size-responsive-20)",
@@ -51,7 +50,6 @@ export default function Generation({
           <ComponentUsedListbox handleNewComponent={handleNewComponent} />
         </div>
 
-        {/* Second Box - 2/5 columns */}
         <div
           style={{
             padding: "var(--size-responsive-20)",
@@ -63,7 +61,6 @@ export default function Generation({
           <CodeWindow />
         </div>
 
-        {/* Third Box - 2/5 columns */}
         <div
           style={{
             padding: "var(--size-responsive-20)",
