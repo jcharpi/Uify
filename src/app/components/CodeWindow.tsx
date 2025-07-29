@@ -87,7 +87,7 @@ export default function CodeWindow() {
           iconTwoColor
           onClick={handleCopyCode}
           style={{
-            padding: "var(--size-responsive-18) var(--size-responsive-24)",
+            padding: "var(--size-responsive-18) var(--size-responsive-18)",
             fontSize: "var(--typography-button-large-font-size)",
           }}
         >

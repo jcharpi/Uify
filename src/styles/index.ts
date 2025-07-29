@@ -1,3 +1,2 @@
 // Central export for all styles
-export * from './theme';
-export * from './components';
+export * from "./components"

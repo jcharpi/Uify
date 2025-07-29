@@ -5,12 +5,32 @@ import ModelCombobox from "./components/ModelCombobox"
 import DescriptionInput from "./components/DescriptionInput"
 import ExampleSelect from "./components/ExampleSelect"
 import { Button } from "@visa/nova-react"
+import Generation from "./generation"
 
 export default function Prompt() {
   const [description, setDescription] = useState("")
+  const [isGenerating, setIsGenerating] = useState(false)
+  const [showGeneration, setShowGeneration] = useState(false)
 
   const handleExampleClick = (exampleText: string) => {
     setDescription(exampleText)
+  }
+
+  const handleGenerate = () => {
+    if (isGenerating) return
+    setIsGenerating(true)
+    setTimeout(() => {
+      setShowGeneration(true)
+    }, 2000)
+  }
+
+  const handleNewComponent = () => {
+    setShowGeneration(false)
+    setIsGenerating(false)
+  }
+
+  if (showGeneration) {
+    return <Generation handleNewComponent={handleNewComponent} />
   }
 
   return (
@@ -73,6 +93,7 @@ export default function Prompt() {
         </div>
         <Button
           alternate
+          onClick={handleGenerate}
           style={{
             position: "static",
             margin: "var(--size-responsive-40) auto",
@@ -81,7 +102,7 @@ export default function Prompt() {
             fontSize: "var(--typography-button-large-font-size)",
           }}
         >
-          Generate
+          {isGenerating ? "Generating..." : "Generate"}
         </Button>
       </div>
     </div>

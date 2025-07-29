@@ -4,7 +4,13 @@ import CodeWindow from "./components/CodeWindow"
 import ComponentUsedListbox from "./components/ComponentUsedListbox"
 import PreviewWindow from "./components/PreviewWindow"
 
-export default function Generation() {
+interface GenerationProps {
+  handleNewComponent?: () => void
+}
+
+export default function Generation({
+  handleNewComponent: handleNewComponent,
+}: GenerationProps) {
   return (
     <div
       style={{
@@ -43,7 +49,7 @@ export default function Generation() {
             boxShadow: "var(--elevation-large)",
           }}
         >
-          <ComponentUsedListbox />
+          <ComponentUsedListbox handleNewComponent={handleNewComponent} />
         </div>
 
         {/* Second Box - 2/5 columns */}

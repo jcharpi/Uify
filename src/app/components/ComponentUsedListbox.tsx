@@ -1,5 +1,11 @@
-import { Label, Listbox, ListboxContainer, ListboxItem } from "@visa/nova-react"
-import { VisaLinkTiny } from "@visa/nova-icons-react"
+import {
+  Button,
+  Label,
+  Listbox,
+  ListboxContainer,
+  ListboxItem,
+} from "@visa/nova-react"
+import { VisaLinkTiny, VisaReloadTiny } from "@visa/nova-icons-react"
 
 const id = "componentUsedListbox"
 
@@ -18,17 +24,43 @@ const options = [
   },
 ]
 
-export default function ComponentUsedListbox() {
+interface ComponentUsedListboxProps {
+  handleNewComponent?: () => void
+}
+
+export default function ComponentUsedListbox({
+  handleNewComponent: handleNewComponent,
+}: ComponentUsedListboxProps) {
   return (
     <fieldset style={{ boxShadow: "var(--elevation-large)" }}>
-      <Label
-        id={`${id}-label`}
-        tag="legend"
-        className="v-typography-headline-3 v-typography-color-subtle"
-        style={{ marginBottom: "var(--size-responsive-16)" }}
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          marginBottom: "var(--size-responsive-16)",
+        }}
       >
-        Components Used
-      </Label>
+        <Label
+          id={`${id}-label`}
+          tag="legend"
+          className="v-typography-headline-3 v-typography-color-subtle"
+        >
+          Components Used
+        </Label>
+
+        <Button
+          buttonSize="small"
+          onClick={handleNewComponent}
+          style={{
+            padding: "var(--size-responsive-18) var(--size-responsive-18)",
+            fontSize: "var(--typography-button-large-font-size)",
+          }}
+        >
+          <VisaReloadTiny />
+          New Component
+        </Button>
+      </div>
       <ListboxContainer>
         <Listbox id={id} tag="div">
           {options.map((option, index) => (
