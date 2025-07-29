@@ -34,9 +34,8 @@ export default function Generation({
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "1fr 2fr 2fr",
+          gridTemplateColumns: "repeat(auto-fit, minmax(500px, 1fr))",
           gap: "var(--size-responsive-20)",
-          height: "88vh",
           marginTop: "var(--size-responsive-20)",
         }}
       >
