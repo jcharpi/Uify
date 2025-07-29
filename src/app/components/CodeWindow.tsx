@@ -2,56 +2,14 @@ import { useState } from "react"
 import { Button, Label } from "@visa/nova-react"
 import { VisaCopyTiny } from "@visa/nova-icons-react"
 import Image from "next/image"
-
-const codeContent = `import React from 'react'
-import { Button, Input, Label } from '@visa/nova-react'
-
-export default function LoginForm() {
-  const [email, setEmail] = React.useState('')
-  const [password, setPassword] = React.useState('')
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    console.log('Login attempt:', { email, password })
-  }
-
-  return (
-    <form onSubmit={handleSubmit}>
-      <div style={{ marginBottom: 'var(--size-responsive-16)' }}>
-        <Label htmlFor="email">Email</Label>
-        <Input
-          id="email"
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="Enter your email"
-        />
-      </div>
-
-      <div style={{ marginBottom: 'var(--size-responsive-16)' }}>
-        <Label htmlFor="password">Password</Label>
-        <Input
-          id="password"
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          placeholder="Enter your password"
-        />
-      </div>
-
-      <Button type="submit" alternate>
-        Login
-      </Button>
-    </form>
-  )
-}`
+import { generatedCode } from "./generatedCode"
 
 export default function CodeWindow() {
   const [copied, setCopied] = useState(false)
 
   const handleCopyCode = async () => {
     try {
-      await navigator.clipboard.writeText(codeContent)
+      await navigator.clipboard.writeText(generatedCode)
       setCopied(true)
       setTimeout(() => setCopied(false), 2000)
     } catch (err) {
@@ -116,7 +74,7 @@ export default function CodeWindow() {
             margin: 0,
           }}
         >
-          {codeContent}
+          {generatedCode}
         </pre>
       </div>
     </fieldset>

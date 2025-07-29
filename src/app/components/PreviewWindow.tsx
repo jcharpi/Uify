@@ -1,4 +1,5 @@
 import { Label } from "@visa/nova-react"
+import PromptInput from "./PromptInput"
 
 export default function PreviewWindow() {
   return (
@@ -24,6 +25,7 @@ export default function PreviewWindow() {
           </Label>
         </div>
       </div>
+      <PromptInput />
     </fieldset>
   )
 }
