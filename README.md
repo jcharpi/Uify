@@ -6,7 +6,7 @@ A React application that generates UI components using Visa's Design System. �
 
 Uify is a Natural Language → Component Suggestion Tool that allows developers to describe UI components in plain English and receive ready-to-use React code utilizing Visa's Product Design System.
 
-**🚀 [Deployment](your-deployment-link-here)**
+**🚀 [Deployment](https://uify.vercel.app/)**
 
 **Key Features:**
 
