@@ -83,6 +83,7 @@ export default function ComponentUsedListbox({
                 href={option.url}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={`View ${option.name} documentation`}
                 style={{
                   color: "var(--palette-default-text-subtle)",
                   textDecoration: "none",

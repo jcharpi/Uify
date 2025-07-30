@@ -15,63 +15,67 @@ export default function Generation({
     <div
       style={{
         minHeight: "100vh",
-        padding: "var(--size-responsive-20)",
+        minWidth: "800px",
         display: "flex",
         flexDirection: "column",
       }}
     >
-      {/* Header */}
-      <h1
-        className="v-typography-display-1"
-        style={{
-          color: "var(--palette-default-surface-1)",
-        }}
-      >
-        Uify
-      </h1>
-
-      {/* Grid Container */}
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(500px, 1fr))",
-          gap: "var(--size-responsive-20)",
-          marginTop: "var(--size-responsive-20)",
-        }}
-      >
-        <div
+      <header>
+        <h1
+          className="v-typography-display-1"
           style={{
+            color: "var(--palette-default-surface-1)",
             padding: "var(--size-responsive-20)",
-            backgroundColor: "var(--palette-default-surface-1)",
-            borderRadius: "var(--size-rounded-medium)",
-            boxShadow: "var(--elevation-large)",
           }}
         >
-          <ComponentUsedListbox handleNewComponent={handleNewComponent} />
-        </div>
+          Uify
+        </h1>
+      </header>
 
+      <main>
         <div
           style={{
-            padding: "var(--size-responsive-20)",
-            backgroundColor: "var(--palette-default-surface-1)",
-            borderRadius: "var(--size-rounded-medium)",
-            boxShadow: "var(--elevation-large)",
+            display: "grid",
+            gridTemplateColumns: "repeat(1, 1fr)",
+            gap: "var(--size-responsive-20)",
+            margin: "var(--size-responsive-20)",
           }}
+          className="grid-responsive"
         >
-          <CodeWindow />
-        </div>
+          <div
+            style={{
+              padding: "var(--size-responsive-20)",
+              backgroundColor: "var(--palette-default-surface-1)",
+              borderRadius: "var(--size-rounded-medium)",
+              boxShadow: "var(--elevation-large)",
+            }}
+          >
+            <ComponentUsedListbox handleNewComponent={handleNewComponent} />
+          </div>
 
-        <div
-          style={{
-            padding: "var(--size-responsive-20)",
-            backgroundColor: "var(--palette-default-surface-1)",
-            borderRadius: "var(--size-rounded-medium)",
-            boxShadow: "var(--elevation-large)",
-          }}
-        >
-          <PreviewWindow />
+          <div
+            style={{
+              padding: "var(--size-responsive-20)",
+              backgroundColor: "var(--palette-default-surface-1)",
+              borderRadius: "var(--size-rounded-medium)",
+              boxShadow: "var(--elevation-large)",
+            }}
+          >
+            <CodeWindow />
+          </div>
+
+          <div
+            style={{
+              padding: "var(--size-responsive-20)",
+              backgroundColor: "var(--palette-default-surface-1)",
+              borderRadius: "var(--size-rounded-medium)",
+              boxShadow: "var(--elevation-large)",
+            }}
+          >
+            <PreviewWindow />
+          </div>
         </div>
-      </div>
+      </main>
     </div>
   )
 }

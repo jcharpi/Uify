@@ -40,8 +40,8 @@ a {
   }
 }
 
-@media (max-width: 1600px) {
-  .generation-grid {
-    grid-template-columns: 1fr !important;
+@media (min-width: 1600px) {
+  .grid-responsive {
+    grid-template-columns: repeat(3, 1fr) !important;
   }
 }
