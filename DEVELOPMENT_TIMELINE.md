@@ -60,8 +60,6 @@ Notably, sometimes Claude would inevitably not style things properly/cause other
 
 ### Project Features ✨
 
-**DISCLAIMER:** As you may have noticed - this step went beyond the time estimation for the project. And while I realized that at the time, I would not have felt satisfied if some of the frontend concerns like niche styling choices (margins, colors, etc.) were made and tweaked as they now are. You can trust that I am happy with the final product's front-end. Mock functionality was fairly straightforward thanks to the project specification allowing for hardcoding.
-
 I created a VPSD list component to display components used with a link to their VPSD page. **I didn't know how best to handle code blocks, despite seeing them in AI agents, so I asked Claude to help me to do this - apparently there is a code tag, who knew?** The prototype was fairly straightforward as well thanks to hardcoding. I just added in the prompt.tsx component because it serves the purpose of showing a component that aggregates other components. Notably, this does not currently render directly from the code window - these are two individually hardcoded elements.
 
 ### Future Goals 🎯
@@ -92,7 +90,7 @@ Responsive classes from VPSD proved helpful, however some behaviors like scaling
 
 To address accessibility concerns, there was one primary tool I used: WAVE. This is a browser extension my professor told us about in my building user interfaces course. I right click on my component pages and it highlights errors and warnings with accessibility guidelines. There was only one error I got initially and two warnings. The error was that I didn't have aria-labels for the links to the VPSD. This has since been resolved. The two warnings were that I didn't have any sections on my prompt and generation pages respectively. This has also since been resolved. Font sizes, colors, etc. passed WAVE's checks. I had to use some intuition when choosing colors, however it wasn't that hard. I did originally have the react icon on the generation page be its default cyan color, however, I felt visibility would not be ideal on the white background, so I updated it to be Visa's blue color.
 
-## Day 5: Tuesday (Current total: ~30 min) 📚
+## Day 5: Tuesday (Current total: ~1 hr) 📚
 
 **Goal:** Documentation and Deployment 🚀
 
