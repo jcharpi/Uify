@@ -72,7 +72,8 @@ Tested with WAVE browser extension - all errors and warnings resolved:
 - Screen reader compatibility
 
 **Total Development Time:** ~7-8 hours over 5 days
-**DISCLAIMER:** As you may have noticed, I went beyond the time estimation for the project. And while I realized that at the time, I would not have felt satisfied if some of the frontend concerns like certain styling choices (margins, colors, etc.) were made and tweaked as they now are. You can trust that I am happy with the final product, both visually and behaviorally. I do apologize for going over though.
+
+**DISCLAIMER:** As you may have noticed, I went beyond the time estimation for the project. And while I realized that at the time, I would not have felt satisfied if some of the frontend concerns like certain styling choices were made and tweaked as they now are. You can trust that I am happy with the final product, both visually and behaviorally. I do apologize for going over though.
 ---
 
 📚 **[View Detailed Development Timeline](./DEVELOPMENT_TIMELINE.md)** - Complete day-by-day development process, design decisions, and technical challenges.
