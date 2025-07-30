@@ -1,25 +1,41 @@
-# Uify - React Component Generator
+# Uify - React Component Generator ⚛️
 
-A React application that generates UI components using Visa's Design System.
+A React application that generates UI components using Visa's Design System. 🎨
 
-## Project Overview
+## Executive Summary 📋
+
+Uify is a Natural Language → Component Suggestion Tool that allows developers to describe UI components in plain English and receive ready-to-use React code utilizing Visa's Product Design System.
+
+**🚀 [Deployment](your-deployment-link-here)**
+
+**Key Features:**
+
+- 🗣️ (Mock) Natural language input processing for UI component generation
+- 📦 (Mock) Curated Visa Product Design System component suggestions
+- 📝 Ready-to-copy React/TypeScript code snippets
+- 📱 Fully responsive design with WAVE accessibility compliance
+- ✨ Clean, developer-focused workflow
+
+Built with React ⚛️, TypeScript 🔷, and @visa/nova-react 💳
+
+## Project Overview 🎯
 
 Uify is a component generator that allows users to describe UI components and receive React code that utilizes Visa's Design System components and styling.
 
-## Development Timeline
+## Development Timeline ⏰
 
-### Documentation Guidelines
+### Documentation Guidelines 📖
 
 - Documentation is logged as: activity (time taken in minutes)
 - **Bolded text like this indicates Claude was used to assist**
 
-### Day 1: Friday (Total time: ~10 min)
+### Day 1: Friday (Total time: ~10 min) 🚀
 
-**Goal:** Get the ideas flowing - make something and let it sit for tomorrow
+**Goal:** Get the ideas flowing - make something and let it sit for tomorrow 💡
 
 - Creating low-fidelity prototype to revisit tomorrow and make iterations (10)
 
-#### Design Process
+#### Design Process 🎨
 
 I took an introduction to human-computer interaction course where we learned about the UX design process. It has stuck with me that without a clear vision of what to create, the development cycle of a project will take much longer and involve much more wasted effort. As such, these prototypes proved crucial for having a clear vision of where I was heading from the start. In a perfect world, maybe I could have done more in the UX project like brainstorm with an affinity diagram (something I like to do on my personal projects) or have more time for high-fidelity prototype revisions. Still, I had to make minimal changes from my Figma designs to my final product, which made me happy to see.
 
@@ -27,9 +43,9 @@ I took an introduction to human-computer interaction course where we learned abo
 
 ![Low-fidelity Generation Prototype](public/prototypes/low_fidelity_generation.png)
 
-### Day 2: Saturday (Total time: ~50 min)
+### Day 2: Saturday (Total time: ~50 min) 🎨
 
-**Goal:** Modify old designs and finalize a high-fidelity design
+**Goal:** Modify old designs and finalize a high-fidelity design ✨
 
 - Revisit and modify low-fidelity prototypes after a second look (5)
 - Creating Figma high-fidelity prototypes basic drafts in Figma (15)
@@ -43,11 +59,11 @@ I took an introduction to human-computer interaction course where we learned abo
 
 ![High-fidelity Generation Prototype](public/prototypes/high_fidelity_generation.png)
 
-### Day 3: Sunday (Current total: ~4-5 hrs)
+### Day 3: Sunday (Current total: ~4-5 hrs) 💻
 
-**Goal:** Create front-end and mock functionality
+**Goal:** Create front-end and mock functionality 🔧
 
-#### Technical Setup
+#### Technical Setup ⚙️
 
 - **Set up bare bones React app with the following:**
   - TypeScript implementation
@@ -56,7 +72,7 @@ I took an introduction to human-computer interaction course where we learned abo
   - Themes and styles integration
 - Further refining to remove unnecessary files/content to make project as minimal as possible
 
-#### Development Process
+#### Development Process 🛠️
 
 The first thing I wanted to do was get the layout looking as displayed in my prototypes, using Visa's design system components. From there, my goal was to add mock functionality, make the webpage responsive, and finalize the project by addressing accessibility concerns.
 
@@ -66,13 +82,13 @@ The main two components are the prompt.tsx file and generation.tsx file as shown
 
 Notably, sometimes Claude would inevitably not style things properly/cause other issues with its code. I handled these issues myself. One notable example - I tried to steer away from sizing based on percentages and pixels (for the most part). I wanted as much of the colors and fonts to use VPSD variable names and styling as possible. This was often something I had to update as Claude had limited knowledge about VPSD.
 
-#### Project Features
+#### Project Features ✨
 
 **DISCLAIMER:** As you may have noticed - this step went beyond the time estimation for the project. And while I realized that at the time, I would not have felt satisfied if some of the frontend concerns like niche styling choices (margins, colors, etc.) were made and tweaked as they now are. You can trust that I am happy with the final product's front-end. Mock functionality was fairly straightforward thanks to the project specification allowing for hardcoding.
 
 I created a VPSD list component to display components used with a link to their VPSD page. **I didn't know how best to handle code blocks, despite seeing them in AI agents, so I asked Claude to help me to do this - apparently there is a code tag, who knew?** The prototype was fairly straightforward as well thanks to hardcoding. I just added in the prompt.tsx component because it serves the purpose of showing a component that aggregates other components. Notably, this does not currently render directly from the code window - these are two individually hardcoded elements.
 
-#### Future Goals
+#### Future Goals 🎯
 
 Goals moving forward for this step:
 
@@ -86,30 +102,30 @@ Goals moving forward for this step:
 
 5. I suppose it's worth noting that I didn't add a footer as indicated in my prototypes. This did not seem like a crucial addition given the time estimation.
 
-### Day 4: Monday (Current total: ~1 hr)
+### Day 4: Monday (Current total: ~1 hr) 📱
 
-**Goal:** Create responsiveness and address accessibility concerns
+**Goal:** Create responsiveness and address accessibility concerns ♿
 
-#### Responsiveness Implementation
+#### Responsiveness Implementation 📱
 
 Responsiveness was admittedly a pain - windows kept overflowing from the view and the grid system was frustrating to deal with at times, creating one row of two and then a row of one on smaller screens. **I tried to find issues with responsiveness, pose them to Claude, test fixes, and modify code as needed. One big change Claude made that I wouldn't have known how to do is make the grid system either 3 or 1 column based on screen size without exception. This ensures a nice look regardless of screen size.**
 
 Responsive classes from VPSD proved helpful, however some behaviors like scaling of the preview component proved more difficult.
 
-#### Accessibility Testing
+#### Accessibility Testing ♿
 
 To address accessibility concerns, there was one primary tool I used: WAVE. This is a browser extension my professor told us about in my building user interfaces course. I right click on my component pages and it highlights errors and warnings with accessibility guidelines. There was only one error I got initially and two warnings. The error was that I didn't have aria-labels for the links to the VPSD. This has since been resolved. The two warnings were that I didn't have any sections on my prompt and generation pages respectively. This has also since been resolved. Font sizes, colors, etc. passed WAVE's checks. I had to use some intuition when choosing colors, however it wasn't that hard. I did originally have the react icon on the generation page be its default cyan color, however, I felt visibility would not be ideal on the white background, so I updated it to be Visa's blue color.
 
-### Day 5: Tuesday (Current total: ~30 min)
+### Day 5: Tuesday (Current total: ~30 min) 📚
 
-**Goal:** Documentation and Deployment
+**Goal:** Documentation and Deployment 🚀
 
-#### Documentation Process
+#### Documentation Process 📝
 
-I wrote all of the words in this document myself (besides the headers) though I did **have Claude organize the README.md for me. I am now likely going to have Claude help clean up the project (remove unused code/search for duplicate code or functions that could be separated out).**
+I wrote all of the words in this document myself (besides the headers) though I did **have Claude organize the README.md for me. I am now likely going to have Claude help clean up the project (remove unused code/search for duplicate code or functions that could be separated out). I'll also have Claude add some emojis to this README because who doesn't love emojis?**
 
 This is a step I like to take before deployment. I will then deploy and send my project over to be assessed. This was fun to work on, and could be a really useful project if fleshed out with an actual backend.
 
-## Closing Notes
+## Closing Notes 🎉
 
 I've enjoyed getting to dig around Visa's design system a little more. I'm sure my use of the components and styling will only improve over time. This position sounds incredibly exciting to me. I really believe I'd enjoy my time, my work, and the culture in place at Visa. Thank you for considering me as an applicant. Please reach out to me if you have any questions. It's been a privilege and good practice for me to make this project.
