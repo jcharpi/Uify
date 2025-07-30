@@ -1,3 +1,14 @@
+/**
+ * Component Used Listbox Component
+ *
+ * Displays a list of Visa Design System components used in the generated code.
+ * Each component includes a link to its documentation and provides a "New Component"
+ * button to restart the generation process.
+ *
+ * @author Josh Charpentier
+ * @created 2025
+ */
+
 import {
   Button,
   Label,

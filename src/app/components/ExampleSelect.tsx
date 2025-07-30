@@ -1,3 +1,14 @@
+/**
+ * Example Select Component
+ *
+ * Provides pre-defined example prompts that users can click to quickly
+ * fill the description input. Includes common UI patterns like login forms,
+ * profile cards, and payment forms.
+ *
+ * @author Josh Charpentier
+ * @created 2025
+ */
+
 import { Button, Utility } from "@visa/nova-react"
 
 interface ExampleButtonProps {

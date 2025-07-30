@@ -1,3 +1,13 @@
+/**
+ * Model Combobox Component
+ *
+ * Dropdown selector for choosing AI models (Claude Opus 4, Deepseek R1).
+ * Implements Visa Design System combobox with keyboard navigation and accessibility.
+ *
+ * @author Josh Charpentier
+ * @created 2025
+ */
+
 "use client"
 
 import { VisaChevronDownTiny } from "@visa/nova-icons-react"
@@ -19,11 +29,11 @@ import {
   useCombobox,
 } from "downshift"
 
-type Item = { value: string }
+type Model = { value: string }
 
-const items: Item[] = [{ value: "Claude Opus 4" }, { value: "Deepseek R1" }]
+const models: Model[] = [{ value: "Claude Opus 4" }, { value: "Deepseek R1" }]
 
-export const itemToString = (item: Item | null) => (item ? item.value : "")
+export const itemToString = (item: Model | null) => (item ? item.value : "")
 
 export const stateReducer = <ItemType,>(
   state: UseComboboxState<ItemType>,
@@ -48,7 +58,7 @@ export default function ModelCombobox() {
     inputValue,
     isOpen,
   } = useCombobox({
-    items: items,
+    items: models,
     itemToString,
     stateReducer,
   })
@@ -111,7 +121,7 @@ export default function ModelCombobox() {
       >
         <ListboxContainer>
           <Listbox id={listboxId}>
-            {items.map((item, index) => (
+            {models.map((item, index) => (
               <ListboxItem
                 className={
                   highlightedIndex === index ? "v-listbox-item-highlighted" : ""

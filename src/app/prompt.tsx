@@ -1,20 +1,24 @@
+/**
+ * Prompt Component
+ *
+ * Main input interface for the Uify component generator. Allows users to describe
+ * UI components, select examples, and generate React code using Visa's Design System.
+ * Handles navigation between prompt input and generation result views.
+ *
+ * @author Josh Charpentier
+ * @created 2025
+ */
+
 "use client"
 
 import { useState } from "react"
-import ModelCombobox from "./components/ModelCombobox"
-import DescriptionInput from "./components/DescriptionInput"
-import ExampleSelect from "./components/ExampleSelect"
-import { Button } from "@visa/nova-react"
+import PromptInput from "./components/PromptInput"
 import Generation from "./generation"
 
 export default function Prompt() {
   const [description, setDescription] = useState("")
   const [isGenerating, setIsGenerating] = useState(false)
   const [showGeneration, setShowGeneration] = useState(false)
-
-  const handleExampleClick = (exampleText: string) => {
-    setDescription(exampleText)
-  }
 
   const handleGenerate = () => {
     if (isGenerating) return
@@ -91,23 +95,13 @@ export default function Prompt() {
           </h3>
 
           <div style={{ marginTop: "var(--size-responsive-30)" }}>
-            <DescriptionInput value={description} onChange={setDescription} />
-            <ExampleSelect onExampleClick={handleExampleClick} />
-            <ModelCombobox />
+            <PromptInput
+              description={description}
+              onDescriptionChange={setDescription}
+              onGenerate={handleGenerate}
+              isGenerating={isGenerating}
+            />
           </div>
-          <Button
-            alternate
-            onClick={handleGenerate}
-            style={{
-              position: "static",
-              margin: "var(--size-responsive-40) auto",
-              display: "block",
-              padding: "var(--size-responsive-12) var(--size-responsive-24)",
-              fontSize: "var(--typography-button-large-font-size)",
-            }}
-          >
-            {isGenerating ? "Generating..." : "Generate"}
-          </Button>
         </section>
       </main>
     </div>

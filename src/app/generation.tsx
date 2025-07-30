@@ -1,3 +1,14 @@
+/**
+ * Generation Component
+ *
+ * Results page that displays the generated component code, component suggestions,
+ * and live preview. Provides a three-panel layout showing components used,
+ * generated code, and component preview.
+ *
+ * @author Josh Charpentier
+ * @created 2025
+ */
+
 "use client"
 
 import CodeWindow from "./components/CodeWindow"

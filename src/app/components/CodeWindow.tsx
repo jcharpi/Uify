@@ -1,8 +1,18 @@
+/**
+ * Code Window Component
+ *
+ * Displays the generated React code with syntax highlighting and copy functionality.
+ * Shows the React icon and provides a copy-to-clipboard button for easy code sharing.
+ *
+ * @author Josh Charpentier
+ * @created 2025
+ */
+
 import { useState } from "react"
 import { Button, Label } from "@visa/nova-react"
 import { VisaCopyTiny } from "@visa/nova-icons-react"
 import Image from "next/image"
-import { generatedCode } from "./generatedCode"
+import { generatedCode } from "../data/generatedCode"
 
 export default function CodeWindow() {
   const [copied, setCopied] = useState(false)

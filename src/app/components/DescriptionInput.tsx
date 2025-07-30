@@ -1,3 +1,13 @@
+/**
+ * Description Input Component
+ *
+ * Text area input for users to describe their desired UI component.
+ * Handles controlled input state with proper labeling and accessibility.
+ *
+ * @author Josh Charpentier
+ * @created 2025
+ */
+
 import { ChangeEvent } from "react"
 import { InputContainer, Label, Textarea, Utility } from "@visa/nova-react"
 
@@ -8,7 +18,10 @@ interface DescriptionInputProps {
   onChange: (value: string) => void
 }
 
-export default function DescriptionInput({ value, onChange }: DescriptionInputProps) {
+export default function DescriptionInput({
+  value,
+  onChange,
+}: DescriptionInputProps) {
   return (
     <div style={{ margin: "var(--size-responsive-20) 0" }}>
       <Utility vFlex vFlexCol vGap={4}>
@@ -20,7 +33,9 @@ export default function DescriptionInput({ value, onChange }: DescriptionInputPr
             id={id}
             name={id}
             value={value}
-            onChange={(e: ChangeEvent<HTMLTextAreaElement>) => onChange(e.target.value)}
+            onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
+              onChange(e.target.value)
+            }
             style={{
               blockSize: "80px",
               margin: "var(--size-responsive-4)",

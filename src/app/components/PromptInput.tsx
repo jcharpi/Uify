@@ -1,3 +1,14 @@
+/**
+ * Prompt Input Component
+ *
+ * Reusable input interface for component generation. Contains description input,
+ * example selection, model combobox, and generate button. Used both in the main
+ * prompt view and as a preview in the generation results.
+ *
+ * @author Josh Charpentier
+ * @created 2025
+ */
+
 import { useState } from "react"
 import ModelCombobox from "./ModelCombobox"
 import DescriptionInput from "./DescriptionInput"
@@ -7,13 +18,21 @@ import { Button } from "@visa/nova-react"
 interface PromptInputProps {
   onGenerate?: () => void
   isGenerating?: boolean
+  description?: string
+  onDescriptionChange?: (value: string) => void
 }
 
 export default function PromptInput({
   onGenerate,
   isGenerating = false,
+  description: externalDescription,
+  onDescriptionChange,
 }: PromptInputProps) {
-  const [description, setDescription] = useState("")
+  const [internalDescription, setInternalDescription] = useState("")
+
+  // Use external description if provided, otherwise use internal state
+  const description = externalDescription ?? internalDescription
+  const setDescription = onDescriptionChange ?? setInternalDescription
 
   const handleExampleClick = (exampleText: string) => {
     setDescription(exampleText)
@@ -25,45 +44,10 @@ export default function PromptInput({
   }
 
   return (
-    <div
-      style={{
-        padding: "var(--size-responsive-20)",
-        backgroundColor: "var(--palette-default-surface-1)",
-        height: "40vh",
-        width: "750px",
-        maxWidth: "90vw",
-        minHeight: "fit-content",
-        margin: "15vh auto 15vh auto",
-        borderRadius: "var(--size-rounded-medium)",
-        boxShadow: "var(--elevation-large)",
-        border: "2px solid var(--palette-default-border)",
-      }}
-    >
-      <h2
-        className="v-typography-headline-1"
-        style={{
-          color: "var(--palette-default-text)",
-          textAlign: "center",
-          margin: "var(--size-responsive-20) 0",
-        }}
-      >
-        Component Generator
-      </h2>
-      <h3
-        className="v-typography-subtitle-1 v-typography-color-subtle"
-        style={{
-          textAlign: "center",
-        }}
-      >
-        Describe your UI component and get React Code that makes use of
-        Visa&apos;s Design System
-      </h3>
-
-      <div style={{ marginTop: "var(--size-responsive-30)" }}>
-        <DescriptionInput value={description} onChange={setDescription} />
-        <ExampleSelect onExampleClick={handleExampleClick} />
-        <ModelCombobox />
-      </div>
+    <>
+      <DescriptionInput value={description} onChange={setDescription} />
+      <ExampleSelect onExampleClick={handleExampleClick} />
+      <ModelCombobox />
       <Button
         alternate
         onClick={handleGenerate}
@@ -77,6 +61,6 @@ export default function PromptInput({
       >
         {isGenerating ? "Generating..." : "Generate"}
       </Button>
-    </div>
+    </>
   )
 }

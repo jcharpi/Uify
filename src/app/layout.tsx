@@ -1,3 +1,13 @@
+/**
+ * Root Layout Component
+ *
+ * Configures the application layout with Next.js metadata, fonts, and Visa Design System styling.
+ * Sets up global styles and theme for the entire application.
+ *
+ * @author Josh Charpentier
+ * @created 2025
+ */
+
 import type { Metadata } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
 import "./globals.css"

@@ -124,6 +124,8 @@ To address accessibility concerns, there was one primary tool I used: WAVE. This
 
 I wrote all of the words in this document myself (besides the headers) though I did **have Claude organize the README.md for me. I am now likely going to have Claude help clean up the project (remove unused code/search for duplicate code or functions that could be separated out). I'll also have Claude add some emojis to this README because who doesn't love emojis?**
 
+**I ended up having Claude add document headers and do some last minute styling to PromptInput on the preview screen as well. I've tested everything works - we are ready for Deployment time!**
+
 This is a step I like to take before deployment. I will then deploy and send my project over to be assessed. This was fun to work on, and could be a really useful project if fleshed out with an actual backend.
 
 ## Closing Notes 🎉
