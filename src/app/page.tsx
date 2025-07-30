@@ -1,11 +1,15 @@
-import { theme } from '../styles';
+/**
+ * Home Page Component
+ *
+ * Main entry point for the Uify application. Renders the Prompt component
+ * which handles the initial user input for component generation.
+ *
+ * @author Josh Charpentier
+ * @created 2025
+ */
+
+import Prompt from "./prompt"
 
 export default function Home() {
-  return (
-    <div style={{
-      minHeight: '100vh',
-      backgroundColor: theme.colors.active.default
-    }}>
-    </div>
-  );
+  return <Prompt />
 }
